@@ -27,9 +27,11 @@ public class BulletSpawn : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(_bullet, transform.position + new Vector3(0.15f,.9f,.6f), Quaternion.identity);
+            Instantiate(_bullet, transform.position + new Vector3(0.03f,0.97f,.5f), Quaternion.identity);
             yield return new WaitForSeconds(_spawnTime);
-            
+
+           // Vector3(-0.722864866, 1.51960015, -87.3199997)
+
         }
     }
 

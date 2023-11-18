@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 m_movementVector;
     private Vector2 m_mousePreviousPosition;
+    private float currentMovementSpeed;
     private bool gameStarted;
 
     private void Awake()
@@ -52,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             m_mousePreviousPosition = Input.mousePosition;
 
             m_movementVector = Vector3.right * mouseDelta;
-
+            m_movementVector.Normalize();
           
         }
     }
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
     private void CalculateMovement()
     {
         MovementInput();
-
+        
         m_movementVector.Normalize();
 
         Vector3 newPosition = new Vector3();
