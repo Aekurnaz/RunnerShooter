@@ -7,7 +7,7 @@ public class PowersSpawn : MonoBehaviour
     [SerializeField] private GameObject _RangeUp;
     [SerializeField] private GameObject _RateUp;
 
-
+    [SerializeField] private GameObject _boxes;
     private int _randomValue;
     // Start is called before the first frame update
     void Start()
@@ -35,11 +35,15 @@ public class PowersSpawn : MonoBehaviour
             }
             else
             {
-                Instantiate(_RateUp, new Vector3(1, 3f, -70), Quaternion.identity);
-                Instantiate(_RangeUp, new Vector3(-1, 3f, -70), Quaternion.identity);
+                Instantiate(_RateUp, new Vector3(2f, 3f, -70), Quaternion.identity);
+                Instantiate(_RangeUp, new Vector3(-2f, 3f, -72), Quaternion.identity);
             }
             yield return new WaitForSeconds(5f);
-            
+
+            Instantiate(_boxes, new Vector3(-1.5f, .5f, -70), Quaternion.identity);
+
+            yield return new WaitForSeconds(5f);
+
         }
     }
 }

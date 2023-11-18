@@ -1,16 +1,14 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class FireRatePowerUp : MonoBehaviour
+public class BoxLives : MonoBehaviour
 {
-    
     private TextMeshPro _text;
-   
-    public float _fireRatePlus;
+
+    public float _boxLives;
+    
 
     private void Awake()
     {
@@ -19,26 +17,30 @@ public class FireRatePowerUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _fireRatePlus = Random.Range(1, 3);
-        _text.text = "Fire Rate " +_fireRatePlus;
-        
+        _boxLives = Random.Range(8, 12);
+        _text.text= _boxLives.ToString();
     }
+
+    
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent(out BulletMovement _))
         {
-            _fireRatePlus++;
+            _boxLives--;
             Destroy(other.gameObject);
-            _text.text = "Fire Rate   " + (_fireRatePlus);
+            _text.text = (_boxLives.ToString());
+
+            if(_boxLives <= 0)
+            {
+                Destroy(this.transform.parent.gameObject);
+            }
         }
 
-        if(other.gameObject.TryGetComponent(out BulletSpawn spawn))
+        if (other.gameObject.TryGetComponent(out BulletSpawn player))
         {
-            spawn._spawnTime -= (_fireRatePlus / 500f);
             Destroy(this.gameObject);
+            Debug.Log("Player Damaged");
         }
     }
-
-    
 }

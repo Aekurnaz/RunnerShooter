@@ -527,7 +527,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PT-9M Pistol_skin02
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2170625791386261557, guid: 184794cefbeed96439ae5e552ba91d23, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

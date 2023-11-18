@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 6608756720036820953}
   - component: {fileID: 4248324901317894235}
   - component: {fileID: 7167332503938874901}
+  - component: {fileID: 6638271858611527480}
   m_Layer: 0
   m_Name: Fire Range Up
   m_TagString: powerup
@@ -298,6 +299,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4248324901317894235}
   m_maskType: 0
+--- !u!114 &6638271858611527480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425057930577513517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf674329cec9054987f071df0f5a515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6852922841167701439
 GameObject:
   m_ObjectHideFlags: 0
