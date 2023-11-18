@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 m_movementVector;
     private Vector2 m_mousePreviousPosition;
-    private float currentMovementSpeed;
     private bool gameStarted;
 
     private void Awake()
@@ -54,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
             m_movementVector = Vector3.right * mouseDelta;
 
-            m_movementVector.Normalize();
+          
         }
     }
 
